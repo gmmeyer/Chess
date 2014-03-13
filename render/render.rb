@@ -1,5 +1,9 @@
 class Render
 
+  def initialize(board)
+    @board = board
+  end
+
   def render
     @board.grid.reverse.each do |row|
       row.each do |space|

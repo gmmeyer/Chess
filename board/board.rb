@@ -39,10 +39,13 @@ class Board
     true
   end
 
+
   def move!(start, end_pos)
     self[start], self[end_pos] = nil, self[start]
     self[end_pos].position = end_pos
   end
+
+
 
   def move(start, end_pos)
     if self[start] == nil
@@ -60,6 +63,8 @@ class Board
     move!(start, end_pos)
   end
 
+
+
   def row_setup(vars)
     back_row_courtiers = [Rook.new(*vars), Knight.new(*vars),
                           Bishop.new(*vars)]
@@ -68,6 +73,9 @@ class Board
     back_row_courtiers + [King.new(*vars), Queen.new(*vars)] +
                          back_row_courtiers2
   end
+
+
+
 
   def set_pieces
     position = []
@@ -80,7 +88,7 @@ class Board
       back_row = row_setup(vars)
       back_row = back_row.reverse if i == 1
 
-      place_court(back_row, court, pawns)
+      place_court(back_row, court, pawns, vars)
 
       vars[2] = :black
       court = 7
@@ -89,7 +97,10 @@ class Board
 
   end
 
-  def place_court(back_row, court, pawns)
+
+
+
+  def place_court(back_row, court, pawns, vars)
     back_row.each_with_index do |piece,index|
       position = [court,index]
       self[position] = piece
@@ -100,6 +111,9 @@ class Board
       self[position] = Pawn.new(*vars)
     end
   end
+
+
+
 
   def dup
     board_dup = Board.new
@@ -116,6 +130,10 @@ class Board
     end
     board_dup
   end
+
+
+
+
 
   def [](pos)
     row, col = pos

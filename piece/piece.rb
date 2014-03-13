@@ -22,7 +22,7 @@ class Piece
       duped_board = @board.dup
       duped_piece = duped_board[old_pos]
       duped_board.move!(old_pos, move)
-      duped_piece.move_piece(move)
+      duped_piece.position = move
 
       unless duped_board.in_check?(old_piece.color)
         safe_moves << move

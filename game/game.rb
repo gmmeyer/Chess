@@ -16,7 +16,7 @@ class Game
       [@player1, @player2].each do |player_turn|
         raise NotImplementedError if @board.checkmate(player_turn.color)
         player_turn.play_turn(@board)
-        render
+        render.render
       end
 
     end

@@ -1,8 +1,26 @@
-require_relative './board/board.rb'
-require_relative './pieces/pieces.rb'
-require_relative './game/game.rb'
-require_relative './render/render.rb'
-require_relative './player.rb'
-require_relative './HumanPlayer.rb'
-require_relative './ComputerPlayer.rb'
+require_relative './board/board'
 
+require_relative './piece/piece'
+require_relative './piece/slidingpiece'
+require_relative './piece/steppingpiece'
+require_relative './piece/pawn'
+
+require_relative './game/game'
+
+require_relative './render/render'
+
+require_relative './player/player'
+require_relative './player/humanplayer'
+require_relative './player/computerplayer'
+
+
+chess_game = Game.new
+
+render = Render.new(chess_game.board)
+
+
+if __FILE__ == $PROGRAM_NAME
+
+  chess_game.play
+
+end
