@@ -1,3 +1,7 @@
+# encoding: utf-8
+
+require 'colorize'
+
 require_relative './board/board'
 
 require_relative './piece/piece'

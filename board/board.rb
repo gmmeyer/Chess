@@ -45,8 +45,6 @@ class Board
     self[end_pos].position = end_pos
   end
 
-
-
   def move(start, end_pos)
     if self[start] == nil
       raise StandardError.new 'There is no piece there.'
@@ -63,8 +61,6 @@ class Board
     move!(start, end_pos)
   end
 
-
-
   def row_setup(vars)
     back_row_courtiers = [Rook.new(*vars), Knight.new(*vars),
                           Bishop.new(*vars)]
@@ -73,9 +69,6 @@ class Board
     back_row_courtiers + [King.new(*vars), Queen.new(*vars)] +
                          back_row_courtiers2
   end
-
-
-
 
   def set_pieces
     position = []
