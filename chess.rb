@@ -2,16 +2,16 @@
 
 require 'colorize'
 
-require_relative './board/board'
+require_relative './board'
 
 require_relative './piece/piece'
 require_relative './piece/slidingpiece'
 require_relative './piece/steppingpiece'
 require_relative './piece/pawn'
 
-require_relative './game/game'
+require_relative './game'
 
-require_relative './render/render'
+require_relative './render'
 
 require_relative './player/player'
 require_relative './player/humanplayer'
