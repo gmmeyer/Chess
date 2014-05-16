@@ -11,12 +11,21 @@ class Render
     [:white, Bishop] => "\u2657",
     [:white, Knight] => "\u2658",
     [:white, Pawn] => "\u2659",
-    [:black, King] => "\u265A",
-    [:black, Queen] => "\u265B",
-    [:black, Rook] => "\u265C",
-    [:black, Bishop] => "\u265D",
-    [:black, Knight] => "\u265E",
-    [:black, Pawn] => "\u265F"
+    [King] => "\u265A",
+    [Queen] => "\u265B",
+    [Rook] => "\u265C",
+    [Bishop] => "\u265D",
+    [Knight] => "\u265E",
+    [Pawn] => "\u265F"
+  }
+
+  TYPE_CONVERSION = {
+    [King] => "\u2654",
+    [Queen] => "\u2655",
+    [Rook] => "\u2656",
+    [Bishop] => "\u2657",
+    [Knight] => "\u2658",
+    [Pawn] => "\u2659",
   }
 
 
@@ -67,7 +76,7 @@ class Render
     @board.grid.reverse.each_with_index do |row, i|
       row.each_with_index do |space, j|
         unless space.nil? 
-          print board_color(' ' + COLOR_CONVERSION[[space.color, space.class]].encode('utf-8') + ' ', i, j, space)
+          print board_color(' ' + TYPE_CONVERSION[[space.class]].encode('utf-8') + ' ', i, j, space)
         else
           print board_color('   ', i, j, space)
         end
